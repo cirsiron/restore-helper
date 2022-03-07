@@ -34,6 +34,7 @@ const TestHelper = ({ onHide }) => {
     onHide && onHide();
   };
   const handleChangeTool = () => {
+    handleFetch();
     setIsShow(!isShow);
   };
   if (!isShow) {
