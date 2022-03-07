@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, ScrollView, Animated, TouchableOpacity } from 'react-native';
-import { TYText } from 'tuya-panel-kit';
+import { StyleSheet, Text, View, ScrollView, Animated, TouchableOpacity } from 'react-native';
 import GestureFn, { getToday, panResponderHandler, changeVisibility } from './utils';
 import storage from './storage';
 import init from './decorate';
@@ -74,7 +73,7 @@ const TestHelper = ({ onHide }) => {
             style={styles.buttonStyle}
             onPress={handleChangeTool}
           >
-            <TYText>Restore</TYText>
+            <Text>Restore</Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -100,20 +99,20 @@ const TestHelper = ({ onHide }) => {
                 width: '100%',
               }}
             >
-              <TYText color="#111">{JSON.stringify(i, null, 2)}</TYText>
+              <Text style={{ color: '#111' }} >{JSON.stringify(i, null, 2)}</Text>
             </View>
           );
         })}
       </ScrollView>
       <View style={styles.buttonWrapper}>
         <TouchableOpacity style={styles.buttonStyle} onPress={handlePress}>
-          <TYText>最小化</TYText>
+          <Text>最小化</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleHide}>
-          <TYText>隐藏</TYText>
+          <Text>隐藏</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleClear}>
-          <TYText>清空</TYText>
+          <Text>清空</Text>
         </TouchableOpacity>
       </View>
     </View>

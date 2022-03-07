@@ -1,11 +1,9 @@
 import { AsyncStorage } from 'react-native';
-import { TYSdk } from 'tuya-panel-kit';
 
 const storage = {
-  async getItem(key: string) {
-    const { devInfo } = TYSdk;
+  async getItem(key: string, prefix = '') {
     return new Promise((resolve, reject) => {
-      const id = `${devInfo.devId}`.slice(0, 8);
+      const id = `${prefix}`.slice(0, 8);
       AsyncStorage.getItem(`${key}_${id}`, (err, data) => {
         if (err) {
           reject(err);
@@ -18,9 +16,8 @@ const storage = {
       });
     });
   },
-  async setItem(key: string, value: any) {
-    const { devInfo } = TYSdk;
-    const id = `${devInfo.devId}`.slice(0, 8);
+  async setItem(key: string, value: any, prefix = '') {
+    const id = `${prefix}`.slice(0, 8);
     const data = { value, type: typeof value };
     const jsonValue = JSON.stringify(data);
     return new Promise((resolve, reject) => {
@@ -33,9 +30,8 @@ const storage = {
       });
     });
   },
-  async removeItem(key: string) {
-    const { devInfo } = TYSdk;
-    const id = `${devInfo.devId}`.slice(0, 8);
+  async removeItem(key: string, prefix = "") {
+    const id = `${prefix}`.slice(0, 8);
     return new Promise((resolve, reject) => {
       AsyncStorage.removeItem(`${key}_${id}`, err => {
         if (err) {
