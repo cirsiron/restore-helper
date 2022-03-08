@@ -18,7 +18,7 @@
 
 ```ts
 // main.js
-import RestoreHelper, { utils, restore } from '@components/RestoreHelper';
+import RestoreHelper, { utils, restore } from "restore-helper";
 // 运行监测
 restore.run();
 
@@ -31,11 +31,11 @@ const handleHide = () => {
 <View
   {...utils.changeVisibility(setShowHelp).panHandlers}
   style={{
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
   }}
 >
-  <Comp {...props} />
+  <XComponent {...props} />
   {showHelp && <RestoreHelper onHide={handleHide} />}
 </View>;
 ```

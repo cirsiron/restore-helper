@@ -21,7 +21,7 @@ import defaultLocalMusic from '@config/default/localMusic';
 import * as MusicManager from '@utils/music';
 import { getBarMode, getCorrectWorkMode, isSupportLocalTimer, getDpDataFromDevice } from '@utils';
 import ErrorBoundary from '@utils/errorCatch';
-import RestoreHelper, { utils, restore } from '@components/RestoreHelper';
+import RestoreHelper, { utils, restore } from 'restore-helper';
 
 import defaultUiConfig from './config/panelConfig/iot';
 
