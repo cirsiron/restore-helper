@@ -4,7 +4,8 @@ import { getToday } from './utils';
 const date = getToday();
 
 const addTimerData = res => {
-  const time = new Date().toLocaleTimeString();
+  let time = new Date().toLocaleString().match(/\d+:\d+:\d+/);
+  time = time ? time[0] : new Date().toLocaleString;
   const transData = {
     time,
     data: res,

@@ -5,14 +5,12 @@ export const changeVisibility = callback => {
     onStartShouldSetPanResponder: () => {
       return true;
     },
-    onPanResponderStart: () => {
-      return true;
-    },
-    onPanResponderMove: (_, gestureState) => {
-      const { numberActiveTouches, dy } = gestureState;
-      if (numberActiveTouches === 4 && dy >= 100) {
+    onPanResponderStart: (_, gestureState) => {
+      const { numberActiveTouches } = gestureState;
+      if (numberActiveTouches === 5) {
         callback && callback(true);
       }
+      return true;
     },
   });
 };

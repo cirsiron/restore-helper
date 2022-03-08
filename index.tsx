@@ -34,7 +34,7 @@ const TestHelper = ({ onHide }) => {
     onHide && onHide();
   };
   const handleChangeTool = () => {
-    handleFetch();
+    !isShow && handleFetch();
     setIsShow(!isShow);
   };
   if (!isShow) {
@@ -74,7 +74,13 @@ const TestHelper = ({ onHide }) => {
             style={styles.buttonStyle}
             onPress={handleChangeTool}
           >
-            <Text>Restore</Text>
+            <Text
+              style={{
+                color: 'white',
+              }}
+            >
+              Restore
+            </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>
@@ -100,20 +106,20 @@ const TestHelper = ({ onHide }) => {
                 width: '100%',
               }}
             >
-              <Text style={{ color: '#111' }} >{JSON.stringify(i, null, 2)}</Text>
+              <Text style={{ color: '#333' }}>{JSON.stringify(i, null, 2).slice(0, 200)}</Text>
             </View>
           );
         })}
       </ScrollView>
       <View style={styles.buttonWrapper}>
         <TouchableOpacity style={styles.buttonStyle} onPress={handlePress}>
-          <Text>最小化</Text>
+          <Text style={{ color: 'white' }}>最小化</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleHide}>
-          <Text>隐藏</Text>
+          <Text style={{ color: 'white' }}>隐藏</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleClear}>
-          <Text>清空</Text>
+          <Text style={{ color: 'white' }}>清空</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -139,6 +145,7 @@ const styles = StyleSheet.create({
   buttonStyle: {
     height: 40,
     width: 80,
+    color: 'white',
     backgroundColor: '#333',
     marginHorizontal: 4,
     borderRadius: 20,
