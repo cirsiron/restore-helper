@@ -1,6 +1,6 @@
 {
   "name": "restore-helper",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "面板问题还原助手(RestoreHelper)",
   "main": "index.tsx",
   "directories": {
@@ -15,7 +15,8 @@
   "author": "cris",
   "license": "ISC",
   "dependencies": {
-    "react": "^17.0.2",
+    "@tuya-rn/rn-fetch-blob": "^0.10.14",
+    "react": "16.8.3",
     "react-native": "0.59.10"
   },
   "peerDependencies": {}

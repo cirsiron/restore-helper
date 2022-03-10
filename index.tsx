@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Animated, TouchableOpacity } from '
 import GestureFn, { getToday, panResponderHandler, changeVisibility } from './utils';
 import storage from './storage';
 import init from './decorate';
+import share from './share';
 
 init();
 const date = getToday();
@@ -37,6 +38,9 @@ const TestHelper = ({ onHide }) => {
     !isShow && handleFetch();
     setIsShow(!isShow);
   };
+  const handleShare = () => {
+    share(JSON.stringify(store, null, 2));
+  }
   if (!isShow) {
     const handler = panResponderHandler({
       onPanResponderMove: (evt, gestureState) => {
@@ -117,6 +121,9 @@ const TestHelper = ({ onHide }) => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleHide}>
           <Text style={{ color: 'white' }}>隐藏</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyle} onPress={handleShare}>
+          <Text style={{ color: 'white' }}>分享</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle} onPress={handleClear}>
           <Text style={{ color: 'white' }}>清空</Text>
