@@ -1,6 +1,6 @@
 {
   "name": "restore-helper",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "面板问题还原助手(RestoreHelper)",
   "main": "index.tsx",
   "directories": {
